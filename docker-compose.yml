@@ -1,0 +1,113 @@
+version: '3.8'
+
+services:
+  # 1. MySQL Database Service
+  mysql:
+    image: mysql:8.0
+    container_name: remoteweb3-mysql
+    restart: always
+    environment:
+      MYSQL_ROOT_PASSWORD: root_password_here
+      MYSQL_DATABASE: remoteweb3Jobs
+      MYSQL_USER: web3job_user
+      MYSQL_PASSWORD: web3job_secure_password
+    ports:
+      - "3306:3306" # Standard MySQL port mapping
+    volumes:
+      - mysql_data:/var/lib/mysql
+    networks:
+      - remoteweb3-network
+    healthcheck:
+      test: ["CMD", "mysqladmin", "ping", "-h", "localhost", "-uweb3job_user", "-pweb3job_secure_password"]
+      interval: 10s
+      timeout: 5s
+      retries: 5
+
+  # 2. Backend Service (Bun + Hono)
+  backend:
+    build:
+      context: ./backend
+      dockerfile: Dockerfile
+    container_name: remoteweb3-backend
+    restart: always
+    ports:
+      - "6002:6002" # Backend running on port 6002
+    environment:
+      - PORT=6002
+      - NODE_ENV=production
+      - DB_HOST=mysql
+      - DB_PORT=3306
+      - DB_USER=web3job_user
+      - DB_PASSWORD=web3job_secure_password
+      - DB_NAME=remoteweb3Jobs
+    depends_on:
+      mysql:
+        condition: service_healthy
+    networks:
+      - remoteweb3-network
+
+  # 3. Spider Service (Bun + Crawler dashboard)
+  spider:
+    build:
+      context: ./spider
+      dockerfile: Dockerfile
+    container_name: remoteweb3-spider
+    restart: always
+    ports:
+      - "6004:6004" # Spider panel on 6004
+    environment:
+      - PORT=6004
+      - NODE_ENV=production
+      - BACKEND_API_URL=http://backend:6002/api
+      - DEEPSEEK_API_KEY=your_deepseek_api_key_here
+    depends_on:
+      backend:
+        condition: service_started
+    networks:
+      - remoteweb3-network
+
+  # 4. Frontend Web App (Next.js)
+  frontend:
+    build:
+      context: ./frontend
+      dockerfile: Dockerfile
+    container_name: remoteweb3-frontend
+    restart: always
+    ports:
+      - "6003:6003" # Next.js production/dev port
+    environment:
+      - PORT=6003
+      - NODE_ENV=production
+      - NEXT_PUBLIC_API_URL=http://localhost:6002/api # Client-side API URL
+      - BACKEND_INTERNAL_URL=http://backend:6002/api # Server-side API URL
+    depends_on:
+      backend:
+        condition: service_started
+    networks:
+      - remoteweb3-network
+
+  # 5. Admin Console (Arco Design)
+  admin:
+    build:
+      context: ./admin
+      dockerfile: Dockerfile
+    container_name: remoteweb3-admin
+    restart: always
+    ports:
+      - "6001:6001" # Admin panel port
+    environment:
+      - NODE_ENV=production
+      - VITE_API_URL=http://localhost:6002/api
+    depends_on:
+      backend:
+        condition: service_started
+    networks:
+      - remoteweb3-network
+
+networks:
+  remoteweb3-network:
+    driver: bridge
+
+volumes:
+  mysql_data:
+    driver: local

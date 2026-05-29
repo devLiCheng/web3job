@@ -1,0 +1,16 @@
+{
+  "name": "remoteweb3-backend",
+  "version": "0.1.0",
+  "type": "module",
+  "scripts": {
+    "dev": "bun --watch src/index.ts",
+    "start": "bun run src/index.ts"
+  },
+  "dependencies": {
+    "hono": "^4.6.3",
+    "mysql2": "^3.11.3"
+  },
+  "devDependencies": {
+    "bun-types": "latest"
+  }
+}

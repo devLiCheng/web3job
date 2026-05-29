@@ -1,0 +1,64 @@
+{
+  "nav": {
+    "title": "RemoteWeb3",
+    "findJobs": "寻找职位",
+    "postJob": "发布招聘",
+    "scraperPanel": "爬虫看板",
+    "connect": "连接钱包",
+    "langToggle": "EN"
+  },
+  "hero": {
+    "badge": "已验证 Web3 职位索引",
+    "title": "寻找您的下一个 remote",
+    "titleSpan": "Web3 探险",
+    "subtitle": "探索经过智能验证的远程区块链工作。由深度学习引擎实时采集和精心筛选。",
+    "explore": "[ 探索职位 ]",
+    "post": "[ 发布职位 ]"
+  },
+  "bento": {
+    "section": "系统生态支柱 [SEC_02 // SYSTEM_PILLARS]",
+    "subtitle": "点击下方生态板块，快速筛选在线智能合约与岗位流",
+    "evmTitle": "EVM Solidity 智能合约",
+    "evmDesc": "智能合约开发、Yul 汇编与系统安全审计。",
+    "rustTitle": "Rust & 零知识证明",
+    "rustDesc": "高性能区块链底层协议开发、Rollup 扩容层及零知识证明算术电路。",
+    "dappTitle": "DApp 前端工程",
+    "dappDesc": "Next.js App Router 架构设计，Ethers、Viem 库及钱包连接套件。",
+    "stats": "个在线职位",
+    "statsLabel": "[ 显示全部 ]"
+  },
+  "feed": {
+    "section": "实时岗位流 [SEC_03 // FEED_DECRYPT]",
+    "title": "战术遥测岗位流",
+    "showing": "当前展示 {{count}} 个远程职位",
+    "search": "过滤岗位名称、关键字、技术栈或薪资...",
+    "empty": "[ 警告: 遥测数据为空 // 暂无契合的职位记录 ]",
+    "reload": "[ 重载完整矩阵 ]"
+  },
+  "card": {
+    "retainer": "面议",
+    "status": "已验证",
+    "action": "查看详情"
+  },
+  "drawer": {
+    "compensation": "[ 薪资标准 ]",
+    "posted": "[ 发布时间 ]",
+    "skills": "[ 技能栈标签 ]",
+    "specs": "[ 职位详细规格 ]",
+    "apply": "[ 进入第三方申请通道 ]"
+  },
+  "modal": {
+    "title": "发布 remote web3 职位",
+    "errorEmpty": "请填写所有必填字段 (*)。",
+    "errorOffline": "数据库连接降级。启用本地战术通道。",
+    "fieldTitle": "[ 职位名称 * ]",
+    "fieldCompany": "[ 公司/DAO 名称 * ]",
+    "fieldTags": "[ 生态必备技能 * ]",
+    "fieldSalary": "[ 薪资范围 ]",
+    "fieldUrl": "[ 申请跳转链接 ]",
+    "fieldDesc": "[ 职位详情描述 * ]",
+    "cancel": "[ 取消 ]",
+    "submit": "[ 确认发布 ]",
+    "submitting": "[ 发布中... ]"
+  }
+}

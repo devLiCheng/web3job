@@ -1,0 +1,19 @@
+{
+  "name": "remoteweb3-spider",
+  "version": "0.1.0",
+  "type": "module",
+  "scripts": {
+    "dev": "bun --watch src/index.ts",
+    "start": "bun run src/index.ts"
+  },
+  "dependencies": {
+    "@ai-sdk/openai": "^0.0.57",
+    "ai": "^3.4.9",
+    "cheerio": "^1.0.0",
+    "hono": "^4.6.3",
+    "zod": "^4.4.3"
+  },
+  "devDependencies": {
+    "bun-types": "latest"
+  }
+}

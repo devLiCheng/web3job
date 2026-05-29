@@ -1,0 +1,64 @@
+{
+  "nav": {
+    "title": "RemoteWeb3",
+    "findJobs": "Find Jobs",
+    "postJob": "Post a Job",
+    "scraperPanel": "Scraper Panel",
+    "connect": "Connect Wallet",
+    "langToggle": "ZH"
+  },
+  "hero": {
+    "badge": "Verified Web3 Careers Index",
+    "title": "Find your next remote",
+    "titleSpan": "Web3 Adventure",
+    "subtitle": "Discover verified remote blockchain roles. Sourced dynamically and curated by deep-learning models.",
+    "explore": "[ Explore Listings ]",
+    "post": "[ Post Remote Job ]"
+  },
+  "bento": {
+    "section": "Featured Ecosystem Pillars [SEC_02 // SYSTEM_PILLARS]",
+    "subtitle": "Click an ecosystem cell to filter available contract listings",
+    "evmTitle": "EVM Solidity",
+    "evmDesc": "Smart Contracts, Yul assembly & security audit structures.",
+    "rustTitle": "Rust & Zero Knowledge",
+    "rustDesc": "High performance protocol design, rollup layers & arithmetization circuits.",
+    "dappTitle": "DApp Frontends",
+    "dappDesc": "Next.js App Router, Ethers, Viem, and custom wallet binding components.",
+    "stats": "INDEXED",
+    "statsLabel": "[ SHOW_ALL_JOBS ]"
+  },
+  "feed": {
+    "section": "Tactical Telemetry Feed [SEC_03 // FEED_DECRYPT]",
+    "title": "Tactical Telemetry Feed",
+    "showing": "Showing {{count}} remote placements",
+    "search": "Filter by keyword, tech, metadata, salary...",
+    "empty": "[ WARNING: DECRYPT_NULL // 0_RECORD_FIT ]",
+    "reload": "[ RELOAD_FULL_MATRIX ]"
+  },
+  "card": {
+    "retainer": "RETAINER",
+    "status": "VERIFIED",
+    "action": "Details"
+  },
+  "drawer": {
+    "compensation": "[ COMPENSATION ]",
+    "posted": "[ POST_AGE ]",
+    "skills": "[ REQUIRED_ECOSYSTEM_SKILLS ]",
+    "specs": "[ ROLE_SPECIFICATIONS_MD ]",
+    "apply": "[ DECRYPT_APPLICATION_GATEWAY ]"
+  },
+  "modal": {
+    "title": "Post a Remote Web3 Job",
+    "errorEmpty": "Please populate all required fields (*).",
+    "errorOffline": "Database connection degraded. Utilizing local bypass channel.",
+    "fieldTitle": "[ JOB_POSITION_TITLE * ]",
+    "fieldCompany": "[ COMPANY_NAME * ]",
+    "fieldTags": "[ ECOSYSTEM_SKILLS * ]",
+    "fieldSalary": "[ COMPENSATION_RANGE ]",
+    "fieldUrl": "[ APPLICATION_LANDING_LINK ]",
+    "fieldDesc": "[ JOB_DESCRIPTION_DETAILS * ]",
+    "cancel": "[ CANCEL ]",
+    "submit": "[ PUBLISH ]",
+    "submitting": "[ PUBLISHING... ]"
+  }
+}
